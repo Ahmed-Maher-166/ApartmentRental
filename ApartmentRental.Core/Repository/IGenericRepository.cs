@@ -1,0 +1,27 @@
+﻿using ApartmentRental.Core.Models;
+using ApartmentRental.Core.Specification;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ApartmentRental.Core.Repository
+{
+    public interface IGenericRepository<T> where T : BaseEntity
+    {
+        #region WithoutSpec
+        public Task<T> GetByIdAsync(int id);
+        public Task<IReadOnlyList<T>> GetAllAsync();
+        public Task AddAsync(T entity);
+        public void Update(T entity);
+        public void Delete(T entity);
+        #endregion
+        #region WithSpec
+        public Task<IReadOnlyList<T>> GetAll(ISpecification<T> specification);
+        public Task<T> GetEntitybySpec(ISpecification<T> specification);
+        public Task<int> GetCount(ISpecification<T> specification);
+        #endregion
+
+    }
+}

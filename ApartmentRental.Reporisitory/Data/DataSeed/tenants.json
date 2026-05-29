@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "appUserId": "user-tenant-001",
+    "universityId": 1
+  },
+  {
+    "id": 2,
+    "appUserId": "user-tenant-002",
+    "universityId": 2
+  },
+  {
+    "id": 3,
+    "appUserId": "user-tenant-003",
+    "universityId": 3
+  }
+]

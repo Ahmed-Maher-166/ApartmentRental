@@ -1,0 +1,67 @@
+[
+  {
+    "id": "user-owner-001",
+    "firstName": "Ahmed",
+    "middleName": "Mohamed",
+    "lastName": "Hassan",
+    "fullName": "Ahmed Mohamed Hassan",
+    "email": "ahmed.owner@example.com",
+    "userName": "ahmed.owner@example.com",
+    "phoneNumber": "01010000001",
+    "photo": "https://example.com/users/owner-001.jpg",
+    "nationalID": "29801011234567",
+    "createdAt": "2026-01-05T10:00:00"
+  },
+  {
+    "id": "user-owner-002",
+    "firstName": "Mona",
+    "middleName": "Ali",
+    "lastName": "Ibrahim",
+    "fullName": "Mona Ali Ibrahim",
+    "email": "mona.owner@example.com",
+    "userName": "mona.owner@example.com",
+    "phoneNumber": "01010000002",
+    "photo": "https://example.com/users/owner-002.jpg",
+    "nationalID": "29902021234567",
+    "createdAt": "2026-01-06T11:30:00"
+  },
+  {
+    "id": "user-tenant-001",
+    "firstName": "Youssef",
+    "middleName": "Samir",
+    "lastName": "Adel",
+    "fullName": "Youssef Samir Adel",
+    "email": "youssef.tenant@example.com",
+    "userName": "youssef.tenant@example.com",
+    "phoneNumber": "01120000001",
+    "photo": "https://example.com/users/tenant-001.jpg",
+    "nationalID": "30403031234567",
+    "createdAt": "2026-01-10T09:15:00"
+  },
+  {
+    "id": "user-tenant-002",
+    "firstName": "Nour",
+    "middleName": "Khaled",
+    "lastName": "Mahmoud",
+    "fullName": "Nour Khaled Mahmoud",
+    "email": "nour.tenant@example.com",
+    "userName": "nour.tenant@example.com",
+    "phoneNumber": "01120000002",
+    "photo": "https://example.com/users/tenant-002.jpg",
+    "nationalID": "30504041234567",
+    "createdAt": "2026-01-11T14:20:00"
+  },
+  {
+    "id": "user-tenant-003",
+    "firstName": "Omar",
+    "middleName": "Tarek",
+    "lastName": "Fathy",
+    "fullName": "Omar Tarek Fathy",
+    "email": "omar.tenant@example.com",
+    "userName": "omar.tenant@example.com",
+    "phoneNumber": "01230000001",
+    "photo": "https://example.com/users/tenant-003.jpg",
+    "nationalID": "30305051234567",
+    "createdAt": "2026-01-12T16:45:00"
+  }
+]

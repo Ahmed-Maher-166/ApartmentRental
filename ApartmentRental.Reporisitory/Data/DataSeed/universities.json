@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Cairo University",
+    "city": "Giza",
+    "area": "Dokki"
+  },
+  {
+    "id": 2,
+    "name": "Ain Shams University",
+    "city": "Cairo",
+    "area": "Abbasiya"
+  },
+  {
+    "id": 3,
+    "name": "Helwan University",
+    "city": "Cairo",
+    "area": "Helwan"
+  }
+]
