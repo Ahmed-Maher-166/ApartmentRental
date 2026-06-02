@@ -8,12 +8,13 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AparatmentRental.Api
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -23,16 +24,8 @@ namespace AparatmentRental.Api
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
-            var app = builder.Build();
-            #region MAIGGration Database
-            builder.Services.AddDbContext<ApartmentRentalContext>(options =>
-                                     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-                             );
-            builder.Services.AddDbContext<AppIdentityDbContext>(options =>
-                                   options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection"))
-                           );
-            #endregion
+            builder.Services.AddApplicationServices();
+            builder.Services.AddDatabaseServices(builder.Configuration);
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("AllowFrontend", policy =>
@@ -45,56 +38,41 @@ namespace AparatmentRental.Api
                 });
             });
             builder.Services.AddIdentity<AppUser, IdentityRole>()
-                .AddEntityFrameworkStores<AppIdentityDbContext>()
-                .AddDefaultTokenProviders();
-            builder.Services.AddApplicationServices();
+        .AddEntityFrameworkStores<AppIdentityDbContext>()
+        .AddDefaultTokenProviders();
+
             builder.Services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             })
-                .AddJwtBearer(options =>
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters()
                 {
-                    options.TokenValidationParameters = new TokenValidationParameters()
-                    {
-                        ValidateIssuer = true,
-                        ValidIssuer = builder.Configuration["JWT:ValidIssuer"],
+                    ValidateIssuer = true,
+                    ValidIssuer = builder.Configuration["JWT:ValidIssuer"],
 
-                        ValidateAudience = true,
-                        ValidAudience = builder.Configuration["JWT:ValidAudience"],
+                    ValidateAudience = true,
+                    ValidAudience = builder.Configuration["JWT:ValidAudience"],
 
-                        ValidateLifetime = true,
+                    ValidateLifetime = true,
 
-                        ValidateIssuerSigningKey = true,
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(
+                        Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"])
+                    )
+                };
+            });
 
-                        IssuerSigningKey = new SymmetricSecurityKey(
-                            Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"])
-                        )
-                    };
-                });
+
+            var app = builder.Build();
+       
+
             // Configure the HTTP request pipeline.
+            await app.ApplyMigrationsAndSeedAsync();
 
-            #region Update-Database
-            using var scope = app.Services.CreateScope();
-            var services = scope.ServiceProvider;
-            var loggerFactory = services.GetRequiredService<ILoggerFactory>();
-            try
-            {
-                var _dbContext = services.GetRequiredService<StoredContext>();
-                await _dbContext.Database.MigrateAsync();
-                var _dbContextIdentity = services.GetRequiredService<AppIdentityDbContext>();
-                await _dbContextIdentity.Database.MigrateAsync();
-                var userManager = services.GetRequiredService<UserManager<AppUser>>();
-                await AppIdentityDbContextSeed.SeedUserAsync(userManager);
-                await StoredContextSeed.GetDataSeedkAsync(_dbContext);
-            }
-            catch (Exception ex)
-            {
-                var logger = loggerFactory.CreateLogger<Program>(); // Logger for exception handling
-                logger.LogError(ex, "An error occurred during applying the migration.");
-            }
 
-            #endregion
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
@@ -102,10 +80,9 @@ namespace AparatmentRental.Api
             }
 
             app.UseHttpsRedirection();
-
+            app.UseCors("AllowFrontend");
+            app.UseAuthentication();
             app.UseAuthorization();
-
-
             app.MapControllers();
 
             app.Run();

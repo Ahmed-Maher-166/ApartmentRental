@@ -9,7 +9,8 @@ namespace ApartmentRental.Core.Specification
     public class ApartmentSpecification 
     {
         public string? Sort { get; set; }
-        public string? Name { get; set; }
+        public string? City { get; set; }
+        public string? StreetName { get; set; }
         public int Index { get; set; } = 1;
         private byte pageSize;
         public byte PageSize

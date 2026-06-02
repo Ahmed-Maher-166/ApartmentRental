@@ -1,20 +1,17 @@
 [
   {
-    "id": 1,
-    "name": "Cairo University",
-    "city": "Giza",
-    "area": "Dokki"
+    "Name": "Cairo University",
+    "City": "Giza",
+    "Area": "Dokki"
   },
   {
-    "id": 2,
-    "name": "Ain Shams University",
-    "city": "Cairo",
-    "area": "Abbasiya"
+    "Name": "Ain Shams University",
+    "City": "Cairo",
+    "Area": "Abbasiya"
   },
   {
-    "id": 3,
-    "name": "Helwan University",
-    "city": "Cairo",
-    "area": "Helwan"
+    "Name": "Helwan University",
+    "City": "Cairo",
+    "Area": "Helwan"
   }
 ]

@@ -1,26 +1,21 @@
 [
   {
-    "id": 1,
     "photoUrl": "https://example.com/apartments/1/photo-1.jpg",
     "apartmentId": 1
   },
   {
-    "id": 2,
     "photoUrl": "https://example.com/apartments/1/photo-2.jpg",
     "apartmentId": 1
   },
   {
-    "id": 3,
     "photoUrl": "https://example.com/apartments/2/photo-1.jpg",
     "apartmentId": 2
   },
   {
-    "id": 4,
     "photoUrl": "https://example.com/apartments/3/photo-1.jpg",
     "apartmentId": 3
   },
   {
-    "id": 5,
     "photoUrl": "https://example.com/apartments/4/photo-1.jpg",
     "apartmentId": 4
   }

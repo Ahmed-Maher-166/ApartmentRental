@@ -45,4 +45,4 @@ namespace ApartmentRental.Service
             return new JwtSecurityTokenHandler().WriteToken(Token);
         }
     }
-}
+} 
