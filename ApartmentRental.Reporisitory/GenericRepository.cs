@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,23 +20,35 @@ namespace ApartmentRental.Reporisitory
         {
             _context = context;
         }
-        async Task IGenericRepository<T>.AddAsync(T entity)
+        public async Task AddAsync(T entity)
         => await _context.Set<T>().AddAsync(entity);
-        void IGenericRepository<T>.Delete(T entity)
+        public void Delete(T entity)
         => _context.Set<T>().Remove(entity);
-        void IGenericRepository<T>.Update(T entity)
+        public void Update(T entity)
           => _context.Set<T>().Update(entity);
-        async Task<IReadOnlyList<T>> IGenericRepository<T>.GetAllAsync()
+        public async Task<IReadOnlyList<T>> GetAllAsync()
         =>await _context.Set<T>().ToListAsync();
-        async Task<T> IGenericRepository<T>.GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(int id)
         => await _context.Set<T>().FindAsync(id);
-        async Task<IReadOnlyList<T>> IGenericRepository<T>.GetAll(ISpecification<T> specification)
+        public async Task<IReadOnlyList<T>> GetAll(ISpecification<T> specification)
         => await ApplySpecification(specification).ToListAsync();
-       async Task<T> IGenericRepository<T>.GetEntitybySpec(ISpecification<T> specification)
+        public async Task<T> GetEntitybySpec(ISpecification<T> specification)
         => await ApplySpecification(specification).FirstOrDefaultAsync();
-        async Task<int> IGenericRepository<T>.GetCount(ISpecification<T> specification)
+        public async Task<int> GetCount(ISpecification<T> specification)
         => await ApplySpecification(specification).CountAsync();
         private IQueryable<T> ApplySpecification(ISpecification<T> specification)
          => SpecificationEvaluator<T>.GetQuery(_context.Set<T>(), specification);
+        public async Task<T> GetFirstOrDefaultAsync(
+                Expression<Func<T, bool>> predicate,
+                Func<IQueryable<T>, IQueryable<T>> include = null)
+        {
+            IQueryable<T> query = _context.Set<T>();
+
+            if (include != null)
+                query = include(query);
+
+            return await query.FirstOrDefaultAsync(predicate);
+        }
+
     }
 }

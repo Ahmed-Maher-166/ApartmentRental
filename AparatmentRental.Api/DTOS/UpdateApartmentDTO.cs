@@ -3,10 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AparatmentRental.Api.DTOS
 {
-    public class ApartmentDTO
+    public class UpdateApartmentDTO
     {
-        [Range(1, int.MaxValue)]
-        public int Id { get; set; }
+
         [Range(1, byte.MaxValue)]
 
         public byte Rooms { get; set; }
@@ -29,7 +28,5 @@ namespace AparatmentRental.Api.DTOS
         [Range(1, byte.MaxValue)]
 
         public byte FloorNumber { get; set; }
-        public int OwnerId { get; set; }
-        public List<PhotoDTO> Photos { get; set; } = new List<PhotoDTO>();
     }
 }

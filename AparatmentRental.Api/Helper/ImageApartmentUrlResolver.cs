@@ -4,7 +4,7 @@ using AutoMapper;
 
 namespace AparatmentRental.Api.Helper
 {
-    public class ImageApartmentUrlResolver : IValueResolver<Apartment, ApartmentDTO, List<string>>
+    public class ImageApartmentUrlResolver : IValueResolver<Apartment, ApartmentDTO, List<PhotoDTO>>
     {
         private readonly IConfiguration _config;
 
@@ -12,24 +12,25 @@ namespace AparatmentRental.Api.Helper
         {
             _config = config;
         }
-        public List<string> Resolve(
+        public List<PhotoDTO> Resolve(
           Apartment source,
           ApartmentDTO destination,
-          List<string> destMember,
+          List<PhotoDTO> destMember,
           ResolutionContext context)
         {
             if (source.Photos == null || !source.Photos.Any())
-                return new List<string>();
-
+                return new List<PhotoDTO>();
             var baseUrl = _config["ProjectFrontend"];
 
             return source.Photos
                 .Where(photo => !string.IsNullOrWhiteSpace(photo.PhotoUrl))
-                .Select(photo =>
-                    photo.PhotoUrl.StartsWith("http")
+                .Select(photo => new PhotoDTO
+                {
+                    Id = photo.Id,
+                    PhotoUrl = photo.PhotoUrl.StartsWith("http")
                         ? photo.PhotoUrl
                         : $"{baseUrl}/{photo.PhotoUrl}"
-                )
+                })
                 .ToList();
         }
     }

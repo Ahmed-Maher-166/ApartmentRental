@@ -189,26 +189,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ApartmentDTO"
-                  }
+                  "$ref": "#/components/schemas/ApartmentDTOPaginations"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ApartmentDTO"
-                  }
+                  "$ref": "#/components/schemas/ApartmentDTOPaginations"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ApartmentDTO"
-                  }
+                  "$ref": "#/components/schemas/ApartmentDTOPaginations"
                 }
               }
             }
@@ -252,6 +243,241 @@
                 }
               }
             }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Apartment"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateApartmentDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateApartmentDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateApartmentDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApartmentDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApartmentDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApartmentDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Apartment"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Apartment/AddApartment": {
+      "post": {
+        "tags": [
+          "Apartment"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateApartmentDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateApartmentDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateApartmentDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApartmentDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApartmentDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApartmentDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Apartment/{id}/Photos": {
+      "post": {
+        "tags": [
+          "Apartment"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Apartment/{id}/Photos/{photoId}": {
+      "delete": {
+        "tags": [
+          "Apartment"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "photoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -301,15 +527,27 @@
       "ApartmentDTO": {
         "type": "object",
         "properties": {
+          "id": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
           "rooms": {
+            "maximum": 255,
+            "minimum": 1,
             "type": "integer",
             "format": "int32"
           },
           "bathrooms": {
+            "maximum": 255,
+            "minimum": 1,
             "type": "integer",
             "format": "int32"
           },
           "maxTenants": {
+            "maximum": 255,
+            "minimum": 1,
             "type": "integer",
             "format": "int32"
           },
@@ -318,6 +556,8 @@
             "nullable": true
           },
           "price": {
+            "maximum": 2147483647,
+            "minimum": 1,
             "type": "integer",
             "format": "int32"
           },
@@ -340,14 +580,120 @@
             "format": "int32"
           },
           "apartmentNumber": {
+            "maximum": 255,
+            "minimum": 1,
             "type": "integer",
             "format": "int32"
           },
           "floorNumber": {
+            "maximum": 255,
+            "minimum": 1,
             "type": "integer",
             "format": "int32"
           },
           "ownerId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "photos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PhotoDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApartmentDTOPaginations": {
+        "type": "object",
+        "properties": {
+          "pageIndex": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageSize": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "count": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApartmentDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateApartmentDTO": {
+        "type": "object",
+        "properties": {
+          "rooms": {
+            "maximum": 255,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "bathrooms": {
+            "maximum": 255,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxTenants": {
+            "maximum": 255,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "gender": {
+            "$ref": "#/components/schemas/Gender"
+          },
+          "availabilityStatus": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "streetName": {
+            "type": "string",
+            "nullable": true
+          },
+          "buildingNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "apartmentNumber": {
+            "maximum": 255,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "floorNumber": {
+            "maximum": 255,
+            "minimum": 1,
             "type": "integer",
             "format": "int32"
           },
@@ -377,6 +723,20 @@
             "nullable": true
           },
           "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PhotoDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "photoUrl": {
             "type": "string",
             "nullable": true
           }
@@ -444,6 +804,70 @@
         ],
         "type": "integer",
         "format": "int32"
+      },
+      "UpdateApartmentDTO": {
+        "type": "object",
+        "properties": {
+          "rooms": {
+            "maximum": 255,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "bathrooms": {
+            "maximum": 255,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxTenants": {
+            "maximum": 255,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "gender": {
+            "$ref": "#/components/schemas/Gender"
+          },
+          "availabilityStatus": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "streetName": {
+            "type": "string",
+            "nullable": true
+          },
+          "buildingNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "apartmentNumber": {
+            "maximum": 255,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "floorNumber": {
+            "maximum": 255,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
       },
       "UserDto": {
         "type": "object",

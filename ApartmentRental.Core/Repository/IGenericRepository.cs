@@ -3,6 +3,7 @@ using ApartmentRental.Core.Specification;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,6 +23,8 @@ namespace ApartmentRental.Core.Repository
         public Task<T> GetEntitybySpec(ISpecification<T> specification);
         public Task<int> GetCount(ISpecification<T> specification);
         #endregion
-
+        Task<T> GetFirstOrDefaultAsync(
+                  Expression<Func<T, bool>> predicate,
+                  Func<IQueryable<T>, IQueryable<T>> include = null);
     }
 }

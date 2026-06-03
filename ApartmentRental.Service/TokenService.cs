@@ -1,4 +1,6 @@
-﻿using ApartmentRental.Core.Models.Identity;
+﻿using ApartmentRental.Core.Models;
+using ApartmentRental.Core.Models.Identity;
+using ApartmentRental.Core.Repository;
 using ApartmentRental.Core.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
@@ -16,10 +18,13 @@ namespace ApartmentRental.Service
     public class TokenService : ITokenService
     {
         private readonly IConfiguration _configuration;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public TokenService(IConfiguration configuration)
+        public TokenService(IConfiguration configuration,
+            IUnitOfWork unitOfWork)
         {
             _configuration = configuration;
+            _unitOfWork = unitOfWork;
         }
 
        public async Task<string> CreateToken(AppUser appUser, UserManager<AppUser> userManager)
@@ -33,6 +38,16 @@ namespace ApartmentRental.Service
             foreach (var Role in UserRoles)
             {
                 Auth.Add(new Claim(ClaimTypes.Role, Role));
+            }
+            if (UserRoles.Contains("Owner"))
+            {
+                var owner = await _unitOfWork.Repository<Owner>()
+                    .GetFirstOrDefaultAsync(o => o.AppUserId == appUser.Id);
+
+                if (owner != null)
+                {
+                    Auth.Add(new Claim("OwnerId", owner.Id.ToString()));
+                }
             }
             var AuthKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Key"]));
             var Token = new JwtSecurityToken(
