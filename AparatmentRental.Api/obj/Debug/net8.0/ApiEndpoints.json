@@ -53,6 +53,68 @@
   },
   {
     "ContainingType": "AparatmentRental.Api.Controllers.AccountsController",
+    "Method": "GetOwners",
+    "RelativePath": "api/Accounts/Owners",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Sort",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "StreetName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Index",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Byte",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AparatmentRental.Api.DTOS.Paginations\u00601[[AparatmentRental.Api.DTOS.OwnerDto, AparatmentRental.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AparatmentRental.Api.Controllers.AccountsController",
+    "Method": "GetOwnerById",
+    "RelativePath": "api/Accounts/Owners/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AparatmentRental.Api.Controllers.AccountsController",
     "Method": "Register",
     "RelativePath": "api/Accounts/Register",
     "HttpMethod": "POST",
@@ -76,6 +138,22 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "AparatmentRental.Api.Controllers.AccountsController",
+    "Method": "GetTenantById",
+    "RelativePath": "api/Accounts/Tenants/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "AparatmentRental.Api.Controllers.ApartmentController",

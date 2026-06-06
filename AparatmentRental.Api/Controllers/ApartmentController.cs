@@ -169,11 +169,9 @@ namespace AparatmentRental.Api.Controllers
 
             var photo = await UnitOfWork.Repository<Photos>().GetByIdAsync(photoId);
             if (photo == null) return NotFound();
-
-            UnitOfWork.Repository<Photos>().Delete(photo);
-
             if (photo.ApartmentId != id)
                 return BadRequest("This photo does not belong to this apartment.");
+            UnitOfWork.Repository<Photos>().Delete(photo);
             await UnitOfWork.CompleteAsync();
 
             return NoContent();

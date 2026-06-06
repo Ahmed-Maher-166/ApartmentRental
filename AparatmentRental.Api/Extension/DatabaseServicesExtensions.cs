@@ -37,7 +37,7 @@ namespace AparatmentRental.Api.Extension
                 await AppIdentityDbContextSeed.SeedRolesAsync(roleManager);
 
                 var userManager = services.GetRequiredService<UserManager<AppUser>>();
-                await AppIdentityDbContextSeed.SeedUserAsync(userManager);
+                await AppIdentityDbContextSeed.SeedUserAsync(userManager, dbContext);
                 await ApartmentRentalContextSeed.GetDataSeedkAsync(dbContext);
             }
             catch (Exception ex)
