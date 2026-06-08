@@ -1,0 +1,15 @@
+C:\Users\ahmed\source\repos\SmartRentals\SmartRental.Reporisitory\bin\Debug\net8.0\SmartRental.Reporisitory.deps.json
+C:\Users\ahmed\source\repos\SmartRentals\SmartRental.Reporisitory\bin\Debug\net8.0\SmartRental.Reporisitory.dll
+C:\Users\ahmed\source\repos\SmartRentals\SmartRental.Reporisitory\bin\Debug\net8.0\SmartRental.Reporisitory.pdb
+C:\Users\ahmed\source\repos\SmartRentals\SmartRental.Reporisitory\bin\Debug\net8.0\SmartRental.Core.dll
+C:\Users\ahmed\source\repos\SmartRentals\SmartRental.Reporisitory\bin\Debug\net8.0\SmartRental.Core.pdb
+C:\Users\ahmed\source\repos\SmartRentals\SmartRental.Reporisitory\obj\Debug\net8.0\SmartRental.Reporisitory.csproj.AssemblyReference.cache
+C:\Users\ahmed\source\repos\SmartRentals\SmartRental.Reporisitory\obj\Debug\net8.0\SmartRental.Reporisitory.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ahmed\source\repos\SmartRentals\SmartRental.Reporisitory\obj\Debug\net8.0\SmartRental.Reporisitory.AssemblyInfoInputs.cache
+C:\Users\ahmed\source\repos\SmartRentals\SmartRental.Reporisitory\obj\Debug\net8.0\SmartRental.Reporisitory.AssemblyInfo.cs
+C:\Users\ahmed\source\repos\SmartRentals\SmartRental.Reporisitory\obj\Debug\net8.0\SmartRental.Reporisitory.csproj.CoreCompileInputs.cache
+C:\Users\ahmed\source\repos\SmartRentals\SmartRental.Reporisitory\obj\Debug\net8.0\SmartRen.FFB9E6AB.Up2Date
+C:\Users\ahmed\source\repos\SmartRentals\SmartRental.Reporisitory\obj\Debug\net8.0\SmartRental.Reporisitory.dll
+C:\Users\ahmed\source\repos\SmartRentals\SmartRental.Reporisitory\obj\Debug\net8.0\refint\SmartRental.Reporisitory.dll
+C:\Users\ahmed\source\repos\SmartRentals\SmartRental.Reporisitory\obj\Debug\net8.0\SmartRental.Reporisitory.pdb
+C:\Users\ahmed\source\repos\SmartRentals\SmartRental.Reporisitory\obj\Debug\net8.0\ref\SmartRental.Reporisitory.dll

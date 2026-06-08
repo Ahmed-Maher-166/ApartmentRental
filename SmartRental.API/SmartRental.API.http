@@ -1,0 +1,6 @@
+@SmartRental.API_HostAddress = http://localhost:5218
+
+GET {{SmartRental.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
