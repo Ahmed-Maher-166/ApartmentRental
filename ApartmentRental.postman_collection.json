@@ -1,0 +1,669 @@
+{
+  "info": {
+    "_postman_id": "45037bf6-17a1-4ca1-ae15-e64bf4b6d0ff",
+    "name": "ApartmentRental",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "29072260"
+  },
+  "item": [
+    {
+      "name": "Register With Owner",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "pm.collectionVariables.set(\"Email\", \"AhmedMaher\"+ Math.trunc(Math.random()*1000)+\"@gmail.com\");\r",
+              "pm.collectionVariables.set(\"Name\", \"AhmedMaher\"+ Math.trunc(Math.random()*1000));"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "\r",
+              "    var Token = pm.response.json().token;\r",
+              "    pm.collectionVariables.set(\"Token\", Token);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"Name\": \"{{Name}}\",\r\n  \"Email\": \"{{Email}}\",\r\n  \"PhoneNumber\": [\r\n    \"01158238898\",\r\n    \"01117112315\"\r\n  ],\r\n  \"Password\": \"Ahmed@123456\",\r\n  \"Photo\": \"https://example2.com/images/ahmed.jpg\",\r\n  \"NationalID\": \"29801011234567\",\r\n  \"Role\": \"Owner\",\r\n  \"UniversityId\":\"1\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/Accounts/Register",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "Accounts",
+            "Register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register With Tenant",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "pm.collectionVariables.set(\"EmailTenant\", \"AhmedMaher\"+ Math.trunc(Math.random()*1000)+\"@gmail.com\");\r",
+              "pm.collectionVariables.set(\"NameTenant\", \"AhmedMaher\"+ Math.trunc(Math.random()*1000));"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "\r",
+              "    var Tokens = pm.response.json().token;\r",
+              "    pm.collectionVariables.set(\"TokenTenant\", Tokens);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"Name\": \"{{NameTenant}}\",\r\n  \"Email\": \"{{EmailTenant}}\",\r\n  \"PhoneNumber\": [\r\n    \"01158238898\"\r\n  ],\r\n  \"Password\": \"Ahmed@123456\",\r\n  \"Photo\": \"https://example.com/images/ahmed.jpg\",\r\n  \"NationalID\": \"29801011234567\",\r\n  \"Role\": \"Tenant\",\r\n  \"UniversityId\":\"3\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/Accounts/Register",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "Accounts",
+            "Register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login With Owner",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "    var Token = pm.response.json().token;\r",
+              "    pm.collectionVariables.set(\"Token\", Token);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"Email\": \"{{Email}}\",\r\n  \"Password\": \"Ahmed@123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/Accounts/Login",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "Accounts",
+            "Login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login With Tenant",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "\r",
+              "    var Tokens = pm.response.json().token;\r",
+              "    pm.collectionVariables.set(\"TokenTenant\", Tokens);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"Email\": \"{{EmailTenant}}\",\r\n  \"Password\": \"Ahmed@123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/Accounts/Login",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "Accounts",
+            "Login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add University",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "\r",
+              "    var Tokens = pm.response.json().token;\r",
+              "    pm.collectionVariables.set(\"TokenTenant\", Tokens);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"Name\":\"Smoha\",\r\n    \"City\":\"sss\",\r\n    \"Area\":\"mm\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/Accounts/AddUniversity",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "Accounts",
+            "AddUniversity"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Owners",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BaseUrl}}/Accounts/Owners?Index=1&PageSize=10",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "Accounts",
+            "Owners"
+          ],
+          "query": [
+            {
+              "key": "Index",
+              "value": "1"
+            },
+            {
+              "key": "PageSize",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Owners by Id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BaseUrl}}/Accounts/Owners/7",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "Accounts",
+            "Owners",
+            "7"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Tenant by Id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BaseUrl}}/Accounts/Owners/2",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "Accounts",
+            "Owners",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Owners by Id",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": " { \"Name\": \"{{Name}}\",\r\n  \"Email\": \"AhmedMaher176@gmail.com\",\r\n  \"Photo\": \"https://example1.com/images/ahmed.jpg\",\r\n   \"PhoneNumber\": [\r\n    \"01122334455\"\r\n  ]\r\n }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/Accounts/Owners/9",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "Accounts",
+            "Owners",
+            "9"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Owner",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/Owners/10",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "Owners",
+            "10"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Apartment",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BaseUrl}}/Apartment?Index=1&PageSize=10",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "Apartment"
+          ],
+          "query": [
+            {
+              "key": "Index",
+              "value": "1"
+            },
+            {
+              "key": "PageSize",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Apartment by id",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "  {\r\n  \r\n           photoUrls:     \"http://localhost:7215/images/apartments/apartment-1-1.jpg\"\r\n          \r\n}"
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/Apartment/3",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "Apartment",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Apartment",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "  {\r\n\r\n            \"rooms\": 5,\r\n            \"bathrooms\": 1,\r\n            \"maxTenants\": 3,\r\n            \"description\": \"Furnished apartment near Cairo University, suitable for 3 students.\",\r\n            \"price\": 8000,\r\n            \"gender\": 1,\r\n            \"availabilityStatus\": 3,\r\n            \"city\": \"Giza\",\r\n            \"streetName\": \"University Street\",\r\n            \"buildingNumber\": 12,\r\n            \"apartmentNumber\": 5,\r\n            \"floorNumber\": 2,\r\n            \"ownerId\": 2,\r\n            \"photos\": [\r\n                \"images/apartments/apartment-1-1.jpg\",\r\n                \"images/apartments/apartment-1-2.jpg\"\r\n            ]\r\n        }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/Apartment/AddApartment",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "Apartment",
+            "AddApartment"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Apartment",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "  {\r\n              \"id\": 13,   \r\n            \"rooms\": 5,\r\n            \"bathrooms\": 1,\r\n            \"maxTenants\": 5,\r\n            \"description\": \"Furnished apartment near Cairo University, suitable for 3 students.\",\r\n            \"price\": 6000,\r\n            \"gender\": 1,\r\n            \"availabilityStatus\": 3,\r\n            \"city\": \"Giza\",\r\n            \"streetName\": \"University Street\",\r\n            \"buildingNumber\": 12,\r\n            \"apartmentNumber\": 5,\r\n            \"floorNumber\": 2\r\n           \r\n        }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/Apartment/3",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "Apartment",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Photo",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "[\r\n  \"https://example.com/images/apartment-1.jpg\",\r\n  \"https://example.com/images/apartment-2.jpg\",\r\n  \"https://example.com/images/apartment-3.jpg\",\r\n  \"https://example.com/images/apartment-4.jpg\"\r\n]",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/Apartment/3/Photos",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "Apartment",
+            "3",
+            "Photos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Photo",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{BaseUrl}}/Apartment/3/Photos/3",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "Apartment",
+            "3",
+            "Photos",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Apartment",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/Apartment/6",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "Apartment",
+            "6"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "BaseUrl",
+      "value": ""
+    },
+    {
+      "key": "Email",
+      "value": ""
+    },
+    {
+      "key": "Name",
+      "value": ""
+    },
+    {
+      "key": "Token",
+      "value": ""
+    },
+    {
+      "key": "EmailTenant",
+      "value": ""
+    },
+    {
+      "key": "NameTenant",
+      "value": ""
+    },
+    {
+      "key": "TokenTenant",
+      "value": ""
+    }
+  ]
+}
