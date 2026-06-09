@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ahmed\\OneDrive\\Desktop\\New folder (2)\\ApartmentRental\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5F558921-F521-4E13-902E-CCF5C4921E41}|SmartRental.Core\\SmartRental.Core.csproj|c:\\users\\ahmed\\onedrive\\desktop\\new folder (2)\\apartmentrental\\smartrental.core\\specification\\ownerwithphonesspecification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F558921-F521-4E13-902E-CCF5C4921E41}|SmartRental.Core\\SmartRental.Core.csproj|solutionrelative:smartrental.core\\specification\\ownerwithphonesspecification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OwnerWithPhonesSpecification.cs",
+              "DocumentMoniker": "C:\\Users\\ahmed\\OneDrive\\Desktop\\New folder (2)\\ApartmentRental\\SmartRental.Core\\Specification\\OwnerWithPhonesSpecification.cs",
+              "RelativeDocumentMoniker": "SmartRental.Core\\Specification\\OwnerWithPhonesSpecification.cs",
+              "ToolTip": "C:\\Users\\ahmed\\OneDrive\\Desktop\\New folder (2)\\ApartmentRental\\SmartRental.Core\\Specification\\OwnerWithPhonesSpecification.cs",
+              "RelativeToolTip": "SmartRental.Core\\Specification\\OwnerWithPhonesSpecification.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T14:26:24.157Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

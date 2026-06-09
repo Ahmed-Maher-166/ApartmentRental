@@ -13,3 +13,19 @@ C:\Users\ahmed\source\repos\SmartRentals\SmartRental.Service\obj\Debug\net8.0\Sm
 C:\Users\ahmed\source\repos\SmartRentals\SmartRental.Service\obj\Debug\net8.0\refint\SmartRental.Service.dll
 C:\Users\ahmed\source\repos\SmartRentals\SmartRental.Service\obj\Debug\net8.0\SmartRental.Service.pdb
 C:\Users\ahmed\source\repos\SmartRentals\SmartRental.Service\obj\Debug\net8.0\ref\SmartRental.Service.dll
+C:\Users\ahmed\OneDrive\Desktop\New folder (2)\ApartmentRental\SmartRental.Service\bin\Debug\net8.0\SmartRental.Service.deps.json
+C:\Users\ahmed\OneDrive\Desktop\New folder (2)\ApartmentRental\SmartRental.Service\bin\Debug\net8.0\SmartRental.Service.dll
+C:\Users\ahmed\OneDrive\Desktop\New folder (2)\ApartmentRental\SmartRental.Service\bin\Debug\net8.0\SmartRental.Service.pdb
+C:\Users\ahmed\OneDrive\Desktop\New folder (2)\ApartmentRental\SmartRental.Service\bin\Debug\net8.0\SmartRental.Core.dll
+C:\Users\ahmed\OneDrive\Desktop\New folder (2)\ApartmentRental\SmartRental.Service\bin\Debug\net8.0\SmartRental.Core.pdb
+C:\Users\ahmed\OneDrive\Desktop\New folder (2)\ApartmentRental\SmartRental.Service\obj\Debug\net8.0\SmartRental.Service.csproj.AssemblyReference.cache
+C:\Users\ahmed\OneDrive\Desktop\New folder (2)\ApartmentRental\SmartRental.Service\obj\Debug\net8.0\SmartRental.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ahmed\OneDrive\Desktop\New folder (2)\ApartmentRental\SmartRental.Service\obj\Debug\net8.0\SmartRental.Service.AssemblyInfoInputs.cache
+C:\Users\ahmed\OneDrive\Desktop\New folder (2)\ApartmentRental\SmartRental.Service\obj\Debug\net8.0\SmartRental.Service.AssemblyInfo.cs
+C:\Users\ahmed\OneDrive\Desktop\New folder (2)\ApartmentRental\SmartRental.Service\obj\Debug\net8.0\SmartRental.Service.csproj.CoreCompileInputs.cache
+C:\Users\ahmed\OneDrive\Desktop\New folder (2)\ApartmentRental\SmartRental.Service\obj\Debug\net8.0\SmartRental.Service.sourcelink.json
+C:\Users\ahmed\OneDrive\Desktop\New folder (2)\ApartmentRental\SmartRental.Service\obj\Debug\net8.0\SmartRen.4DE470BF.Up2Date
+C:\Users\ahmed\OneDrive\Desktop\New folder (2)\ApartmentRental\SmartRental.Service\obj\Debug\net8.0\SmartRental.Service.dll
+C:\Users\ahmed\OneDrive\Desktop\New folder (2)\ApartmentRental\SmartRental.Service\obj\Debug\net8.0\refint\SmartRental.Service.dll
+C:\Users\ahmed\OneDrive\Desktop\New folder (2)\ApartmentRental\SmartRental.Service\obj\Debug\net8.0\SmartRental.Service.pdb
+C:\Users\ahmed\OneDrive\Desktop\New folder (2)\ApartmentRental\SmartRental.Service\obj\Debug\net8.0\ref\SmartRental.Service.dll

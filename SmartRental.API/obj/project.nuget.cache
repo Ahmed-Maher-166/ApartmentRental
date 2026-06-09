@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/6Vf0zgbuVI=",
+  "dgSpecHash": "4hIIVjY93kw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ahmed\\source\\repos\\SmartRentals\\SmartRental.API\\SmartRental.API.csproj",
+  "projectFilePath": "C:\\Users\\ahmed\\OneDrive\\Desktop\\New folder (2)\\ApartmentRental\\SmartRental.API\\SmartRental.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ahmed\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\ahmed\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

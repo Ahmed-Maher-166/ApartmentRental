@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5lw7O2oc64w=",
+  "dgSpecHash": "x2U2zEfu1wI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ahmed\\source\\repos\\SmartRentals\\SmartRental.Service\\SmartRental.Service.csproj",
+  "projectFilePath": "C:\\Users\\ahmed\\OneDrive\\Desktop\\New folder (2)\\ApartmentRental\\SmartRental.Service\\SmartRental.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ahmed\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.27\\microsoft.aspnetcore.authentication.jwtbearer.8.0.27.nupkg.sha512",
     "C:\\Users\\ahmed\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.27\\microsoft.aspnetcore.cryptography.internal.8.0.27.nupkg.sha512",

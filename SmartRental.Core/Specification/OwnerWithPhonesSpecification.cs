@@ -14,6 +14,8 @@ namespace SmartRental.Core.Specification
         {
             Includes.Add(o => o.AppUser);
             Includes.Add(o => o.AppUser.Phones);
+            AddByASC(p => p.Id);
+            ApplyPagination(Params.PageSize, Params.PageSize * (Params.Index - 1));
 
         }
         public OwnersByAppUserIdsSpecification(int Params)

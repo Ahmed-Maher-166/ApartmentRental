@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartRental.Reporisitory")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cecf2d7432bc1716a7ba85f64ab29968156daaa1")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartRental.Reporisitory")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartRental.Reporisitory")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
